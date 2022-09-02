@@ -14,5 +14,13 @@ use App\Http\Controllers\indexController;
 |
 */
 Route::controller(indexController::class)->group(function () {
-    Route::get('/', 'index');
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/add', 'add')->name('contact.add');
+
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::post('/update', 'update')->name('contact.update');
+
+    Route::get('/findByID/{id}', 'findByID')->name('findByID');
+    Route::get('/delete/{id}', 'delete')->name('delete');
 });
