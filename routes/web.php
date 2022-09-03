@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\indexController;
+use App\Mail\Contact;
+use Illuminate\Support\Facades\Mail;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +27,9 @@ Route::controller(indexController::class)->group(function () {
 
     Route::get('/findByID/{id}', 'findByID')->name('findByID');
     Route::get('/delete/{id}', 'delete')->name('delete');
+
+    Route::get('/contact', 'contact')->name('contact');
+    Route::post('/send', 'send')->name('send');
 });
+
+
