@@ -4,6 +4,7 @@
 
     <div class="text-center">
         <!-- add botom -->
+        <h1 class="text-center mb-5 text-primary display-3   " > Contactos Clientes</h1>
         <a href="{{ route('create') }}" class="btn btn-primary">Add New Contact</a>
     </div>
 
