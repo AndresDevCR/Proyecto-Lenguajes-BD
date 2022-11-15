@@ -17,22 +17,30 @@
 </head>
 <header style="margin-bottom: 2%">
  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #000000;">
-     <a class="navbar-brand" href="{{ route('index') }}">Navbar</a>
+     <a class="navbar-brand pl-4" href="{{ route('index') }}">Autos Fidelitas</a>
      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
          aria-expanded="false" aria-label="Toggle navigation"></button>
      <div class="collapse navbar-collapse" id="collapsibleNavId">
          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
              <li class="nav-item">
-                 <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                 <a class="nav-link active" href="{{ url('/') }}" aria-current="page">Inicio</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="#">Link</a>
+                 <a class="nav-link" href="#">Autos Nuevos</a>
              </li>
+             <li class="nav-item">
+                <a class="nav-link" href="#">Autos Usados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Alquiler Autos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Clientes</a>
+            </li>
              <li class="nav-item dropdown">
-                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">⏬</a>
                  <div class="dropdown-menu" aria-labelledby="dropdownId">
                      <a class="dropdown-item" href="{{ route('contact') }}"> Contact </a>
-                     <a class="dropdown-item" href="#">Action 2</a>
                  </div>
              </li>
          </ul>
@@ -59,7 +67,7 @@
     </script>
 </body>
 <footer>
-    <div class="footer bg-dark mt-5 text-center "  style="color: whitesmoke">
+    <div class="footer bg-dark mt-5 p-5 text-center "  style="color: whitesmoke">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
