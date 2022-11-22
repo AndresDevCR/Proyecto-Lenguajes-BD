@@ -1,28 +1,38 @@
 @extends('layouts.layout')
 
-@section('title', 'Find By ID')
+@section('title', 'Autos Nuevos')
 
 @section('content')
     <div class="text-center display 1 color primary">
 
-        <h1>
+        <h1 class="text-center display-5">
             Autos Usados
         </h1>
     </div>
-{{-- 
-    <div class="text-center">
-        <p>{{$car-> name}}</p>
-        <p>{{$car-> model}}</p>
-        <p>{{$car-> year}}</p>
-        <p>{{$car-> price}}</p>
-        <p>{{$car-> description}}</p>
-        <p>{{$car-> image}}</p>
-    </div>
+    {{-- cards de autos --}}
+    <div class="container">
+        <div class="row">
 
-    <div class="text-center">
-        <a href="{{route('newCar')}}" class="btn btn-primary">Volver</a>
+            {{-- foreach model auto --}}
+            @foreach ($autos as $item)
+                <div class="col-4">
+                    <div class="card mt-5" style="width: 18rem;">
+                        <img src="{{ $item->imagen }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title
+                            ">{{ $item->marca }}</h5>
+                            <p class="card-text">{{ $item->modelo }}</p>
+                            <p class="card-text">{{ $item->precio }}</p>
+                            <a href="{{ route('newCar') }}" class="btn btn-primary">Ver mas</a>
+                        </div>
+                    </div>
+                </div>
+                  <!-- pagination -->
+                  @endforeach
+                  <div class="text-center mt-5">
+                      {{ $autos->links() }}
+                  </div>
+        </div>
     </div>
- --}}
-
 
 @endsection

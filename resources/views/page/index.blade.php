@@ -1,68 +1,67 @@
 @extends('layouts.layout')
-@section('title', 'Home Page')
-@section('content')
 
-    <div class="text-center">
-        <!-- add botom -->
-        <h1 class="text-center mb-5 text-primary display-3   " > Contactos Clientes</h1>
-        <a href="{{ route('create') }}" class="btn btn-primary">Add New Contact</a>
+@section('title', 'Home Page')
+
+
+@section('content')
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.newlogisticltda.com/wp-content/uploads/2018/12/banner-carros-newlogistic-1.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://motor.elpais.com/wp-content/uploads/2016/06/portada_toyota.jpg" class="d-block w-100"
+                    alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.pinegocios.com.br/images/noticias/516/Toyota2.jpeg" class="d-block w-100"
+                    alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
     <div class="container">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th> ID </th>
-                    <th> Name </th>
-                    <th> Email </th>
-                    <th> Phone </th>
-                    <th> Message </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($contacts as $contact)
-                    <tr>
-                        <td> {{ $contact->id }} </td>
-                        <td> {{ $contact->name }} </td>
-                        <td> {{ $contact->email }} </td>
-                        <td> {{ $contact->phone }} </td>
-                        <td> {{ $contact->message }} </td>
-                        <td> <a href="{{ route('findByID', $contact->id) }}" class="btn btn-primary"> Watch </a>
-                            <a href="{{ route('edit', $contact->id) }}" class="btn btn-success"> Update </a>
-                            <a href="{{ route('delete', $contact->id) }}" class="btn btn-danger"> Delete </a>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <!-- pagination -->
-        <div class="text-center">
-            {{ $contacts->links() }}
-        </div>
-    </div>
-    <div class="mt-5">
-        <div class="text-center">
-            <h1>Contact Us</h1>
-        </div>
-        <!-- form gorup boostrap -->
-        <div class="container">
-            <form action="{{ route('send') }}" method="post">
-                @csrf
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input required type="text" name="name" class="form-control" id="name"
-                        placeholder="Enter name">
+        <div class="row">
+            <div class="col-12">
+                <h1 class=" indexh1 text-center display-5 mt-3 mb-4">Autos Fidélitas</h1>
+                <div class="main text-center">
+
+
+                    <p class=" color-primary ">
+                        Somos una empresa dedicada a la venta de vehículos nuevos y usados, con más de 20 años de
+                        experiencia en el
+                        mercado.
+                    </p>
+
+                    <p class="color-primary ">
+                        Nuestro objetivo es brindarle la mejor atención y servicio, para que usted pueda adquirir el
+                        vehículo que
+                        siempre soñó.
+
+                    </p>
+
+                    <p class="color-primary ">
+                        Contamos con un amplio stock de vehículos, para que usted pueda elegir el que más se adapte a sus
+                        necesidades.
+                    </p>
+
+                    <p class="color-primary ">
+                        Nuestro personal está altamente capacitado para brindarle la mejor atención y servicio.
+                    </p>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input required type="email" name="email" class="form-control" id="email"
-                        placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea required name="message" class="form-control" id="message" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+
+            </div>
         </div>
+
+
+
     @endsection
