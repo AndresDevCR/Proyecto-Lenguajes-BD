@@ -8,7 +8,8 @@ use App\Models\Auto;
 class newCarContoller extends Controller
 {
     public function newCar()
-    {   $autos = Auto::all();
+    {
+        $autos = Auto::all();
         $autos = Auto::paginate(27);
         return view('page.newCar', compact('autos'));
     }
@@ -28,14 +29,7 @@ class newCarContoller extends Controller
     public function add(Request $request)
     {
         $autos = new Auto();
-        $autos->marca = $request->marca;
-        $autos->modelo = $request->modelo;
-        $autos->color = $request->color;
-        $autos->placa = $request->placa;
-        $autos->precio = $request->precio;
-        $autos->tipo = $request->tipo;
-        $autos->estado = $request->estado;
-        $autos->imagen = $request->imagen;
+        $autos->fill($request->all());
         $autos->save();
         return redirect()->route('newCar');
     }
@@ -50,14 +44,7 @@ class newCarContoller extends Controller
     public function update(Request $request, $id)
     {
         $autos = Auto::find($id);
-        $autos->marca = $request->marca;
-        $autos->modelo = $request->modelo;
-        $autos->color = $request->color;
-        $autos->placa = $request->placa;
-        $autos->precio = $request->precio;
-        $autos->tipo = $request->tipo;
-        $autos->estado = $request->estado;
-        $autos->imagen = $request->imagen;
+        $autos->fill($request->all());
         $autos->save();
         return redirect()->route('newCar');
     }

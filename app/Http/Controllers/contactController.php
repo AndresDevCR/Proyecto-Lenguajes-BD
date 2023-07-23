@@ -73,7 +73,7 @@ class contactController extends Controller
     {
 
         $contact = new ContactMail($request->all());
-        Mail::to('javargas98@hoymail.com')->send($contact);
+        Mail::to('javargas98@hotmail.com')->send($contact);
         return redirect()->route('index');
     }
 }

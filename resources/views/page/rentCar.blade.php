@@ -1,28 +1,51 @@
 @extends('layouts.layout')
 
-@section('title', 'Find By ID')
+@section('title', 'Alquiler de Autos')
 
 @section('content')
-    <div class="text-center display 1 color primary">
-
-        <h1>
-            Autos Rentados
-        </h1>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <div class="text-center">
+                    <h1 class="text-primary display-4">Alquiler de Autos</h1>
+                    <p class="lead">Encuentra el auto perfecto para tus viajes</p>
+                </div>
+                <div class="card-deck mt-5">
+                    <!-- Primer auto -->
+                    <div class="card">
+                        <img src="ruta_de_la_imagen" class="card-img-top" alt="Auto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Modelo 1</h5>
+                            <p class="card-text">Descripción del auto 1.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Alquilar</a>
+                        </div>
+                    </div>
+                    <!-- Segundo auto -->
+                    <div class="card">
+                        <img src="ruta_de_la_imagen" class="card-img-top" alt="Auto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Modelo 2</h5>
+                            <p class="card-text">Descripción del auto 2.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Alquilar</a>
+                        </div>
+                    </div>
+                    <!-- Tercer auto -->
+                    <div class="card">
+                        <img src="ruta_de_la_imagen" class="card-img-top" alt="Auto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Modelo 3</h5>
+                            <p class="card-text">Descripción del auto 3.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Alquilar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-{{-- 
-    <div class="text-center">
-        <p>{{$car-> name}}</p>
-        <p>{{$car-> model}}</p>
-        <p>{{$car-> year}}</p>
-        <p>{{$car-> price}}</p>
-        <p>{{$car-> description}}</p>
-        <p>{{$car-> image}}</p>
-    </div>
-
-    <div class="text-center">
-        <a href="{{route('newCar')}}" class="btn btn-primary">Volver</a>
-    </div>
- --}}
-
-
 @endsection
